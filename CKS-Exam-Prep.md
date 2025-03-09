@@ -55,7 +55,7 @@ pull requests are welcome
    * [IMP Notes Tips for CKSExam](#imp-notes-tips-for-cksexam)
       * [CKS Exam Catergories](#cks-exam-catergories)
       * [CKS Exam Tips](#cks-exam-tips)
-  * [CKS Youtube Video full tutorials - Lean with GVR ](#cks---youtube-playlist----my-youtube-channel---learn-with-gvr)
+  
          
 <hr />
 
@@ -181,11 +181,11 @@ Ref: <https://github.com/aquasecurity/kube-bench/blob/main/docs/installation.md>
 Create TLS Certificate & key
 
 ```sh
-openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout tls.key -out tls.crt -subj "/CN=learnwithgvr.com" -days 365
+openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout tls.key -out tls.crt -subj "/CN=devsecopswithanshu.com" -days 365
 ```
 Create a Secret
 ```sh
-kubectl create secret -n ingresstest tls learnwithgvr-sec --cert=tls.crt --key=tls.key
+kubectl create secret -n ingresstest tls devsecopswithanshu-sec --cert=tls.crt --key=tls.key
 ```
 
 Alternatively Apply this yaml
@@ -194,7 +194,7 @@ Alternatively Apply this yaml
 apiVersion: v1
 kind: Secret
 metadata:
-  name: learnwithgvr-sec
+  name: devsecopswithanshu-sec
   namespace: ingresstest
 data:
   tls.crt: |
@@ -211,10 +211,10 @@ metadata:
 spec:
   tls:
   - hosts:
-      - learnwithgvr.com
-    secretName: learnwithgvr-sec
+      - devsecopswithanshu.com
+    secretName: devsecopswithanshu-sec
   rules:
-  - host: learnwithgvr.com
+  - host: devsecopswithanshu.com
     http:
       paths:
       - path: /
@@ -227,7 +227,7 @@ spec:
 ```
 ```sh
 # minikube on mac - add to hosts
-echo $(minkube ip) learnwithgvr.com > | sudo tee -a /etc/hosts
+echo $(minkube ip) devsecopswithanshu.com > | sudo tee -a /etc/hosts
 ```
 
 Ref: <https://kubernetes.io/docs/concepts/services-networking/ingress/#tls>
@@ -1938,10 +1938,9 @@ docker ps + docker logs
  <hr />
 
 - [CCNF CKS Official Site](https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/)
-- [Refer Certification Preparation Material - my github page](https://github.com/ramanagali/Interview_Guide/blob/main/Certification_Preparation.md#cks)
-- [CKS youtube playlist - my youtube channel](https://www.youtube.com/playlist?list=PLFkEchqXDZx6Bw3B2NRVc499j1TavjOvm)
 
-## CKS - youtube playlist  - my youtube channel - Learn with GVR
-  * [CKS youtube playlist - Learn with GVR](https://www.youtube.com/playlist?list=PLFkEchqXDZx6Bw3B2NRVc499j1TavjOvm)
+
+
+
 
 [🔼 Back to top](#table-of-contents)
